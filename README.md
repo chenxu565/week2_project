@@ -1,2 +1,2 @@
-# week2_project
+# week1_project
 Created with CodeSandbox
