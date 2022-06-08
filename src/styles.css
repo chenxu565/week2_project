@@ -21,3 +21,13 @@ table#menu-table tr th {
   background-color: cyan;
   padding: 2px 2px 2px 2px;
 }
+
+.menu-layout {
+  text-align: center;
+  max-width: 740px;
+  margin: auto;
+}
+
+#menu-table {
+  width: 100%;
+}
