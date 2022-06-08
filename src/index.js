@@ -54,17 +54,38 @@ function initialzeCode() {
     commentText.innerHTML = bigText.value;
     //  let commentText = document.createTextNode(bigText.value);
     //  commentText.classList.add("comment-text");
+    let commentButton = document.createElement("BUTTON");
+    commentButton.classList.add("remove-comment");
+    commentButton.appendChild(document.createTextNode("Delete"));
+    commentButton.style.visibility = "hidden";
+
     newParagraph.appendChild(commentRating);
     newParagraph.appendChild(commentText);
+    newParagraph.appendChild(commentButton);
     layout[0].appendChild(newParagraph);
   });
 
   const removeCommentButton = document.getElementById("remove-comments");
 
   removeCommentButton.addEventListener("click", function () {
-    if (window.confirm("Confirm")) {
+    /* if (window.confirm("Confirm")) {
       const commentList = document.getElementById("comments");
       commentList.replaceChildren();
+    }*/
+    const removeCommentButtons = document.getElementsByClassName(
+      "remove-comment"
+    );
+    for (let i = 0; i < removeCommentButtons.length; i++) {
+      removeCommentButtons[i].style.visibility = "visible";
+    }
+
+    const removeButtons = document.getElementsByClassName("remove-comment");
+    const comments = document.getElementsByClassName("comment");
+
+    for (let i = 0; i < removeButtons.length; i++) {
+      removeButtons[i].addEventListener("click", function () {
+        comments[i].replaceChildren();
+      });
     }
   });
 }
