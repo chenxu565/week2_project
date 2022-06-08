@@ -72,19 +72,22 @@ function initialzeCode() {
       const commentList = document.getElementById("comments");
       commentList.replaceChildren();
     }*/
-    const removeCommentButtons = document.getElementsByClassName(
-      "remove-comment"
-    );
-    for (let i = 0; i < removeCommentButtons.length; i++) {
-      removeCommentButtons[i].style.visibility = "visible";
+    const layout = document.getElementsByClassName("menu-layout");
+    const removeButtons = document.getElementsByClassName("remove-comment");
+    for (let i = 0; i < removeButtons.length; i++) {
+      removeButtons[i].style.visibility = "visible";
     }
 
-    const removeButtons = document.getElementsByClassName("remove-comment");
-    const comments = document.getElementsByClassName("comment");
+    //   let removeButtons = document.getElementsByClassName("remove-comment");
+    let comments = document.getElementsByClassName("comment");
 
     for (let i = 0; i < removeButtons.length; i++) {
       removeButtons[i].addEventListener("click", function () {
-        comments[i].replaceChildren();
+        /*     for (let j=0; j<removeButtons.length; j++){
+          if (j===i){layout[0].removeChild(comments[i]); }
+          removeButtons[j].style.visibility = "hidden";
+      }*/
+        comments[i].remove();
       });
     }
   });
